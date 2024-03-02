@@ -1,5 +1,5 @@
 # Web_Service
  web项目作业
- 这是一个小的测试
- 
-你好你好
+1.创建client和server
+2.搭建数据库，JDBC
+3.
