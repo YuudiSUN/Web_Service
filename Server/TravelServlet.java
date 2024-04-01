@@ -1,6 +1,5 @@
 package test;
 
-
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,7 +14,11 @@ public class TravelServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // 处理 GET 请求
         response.setContentType("text/html");
-        response.getWriter().println("<html><body><h1>Welcome to Travel Website!</h1></body></html>");
+        response.getWriter().println("<html><body><h1>Welcome to sydTravel Website!</h1>");
+        response.getWriter().println("<form action='http://www.google.com/search' method='get'>");
+        response.getWriter().println("<input type='text' name='q' placeholder='Search Google'>");
+        response.getWriter().println("<input type='submit' value='Google Search'>");
+        response.getWriter().println("</form></body></html>");
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
