@@ -11,13 +11,14 @@ public class CityService {
   private synchronized long getNewId() {
     return ++currentId;
   }
-
+  
   public City addCity(City city) {
-    long id = getNewId();
-    city.setId(id);
-    CITY_DATA.put(id, city);
-    return city;
-  }
+	    long id = getNewId();
+	    city.setId(id);
+	    // 假设City对象已经在构造时设置了经度和纬度
+	    CITY_DATA.put(id, city);
+	    return city;
+	}
 
   public boolean deleteCity(long id) {
     if (!CITY_DATA.containsKey(id)) {
@@ -50,6 +51,18 @@ public class CityService {
       return null;
     }
     city.setId(id);
+    CITY_DATA.put(id, city);
+    return city;
+  }
+  
+  // 添加经度和纬度支持
+  public City updateCityWithCoordinates(long id, double longitude, double latitude) {
+    if (!CITY_DATA.containsKey(id)) {
+      return null;
+    }
+    City city = CITY_DATA.get(id);
+    city.setLongitude(longitude);
+    city.setLatitude(latitude);
     CITY_DATA.put(id, city);
     return city;
   }
