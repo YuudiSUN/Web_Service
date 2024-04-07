@@ -8,7 +8,7 @@ public class Country {
 
     private Long id;
     private String name;
-    private Set<City> cities; // 注意：对于实际的XML/JSON序列化，你可能需要处理一对多关系的展示
+    private Set<City> cities; // to Link with city
 
     public Country() {}
 
