@@ -1,24 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         id="WebApp_ID" version="4.0">
+
     <servlet>
         <display-name>travel.management.web</display-name>
         <servlet-name>travel.management.web</servlet-name>
         <servlet-class>org.apache.cxf.jaxrs.servlet.CXFNonSpringJaxrsServlet</servlet-class>
-        <init-param>
-            <param-name>jaxrs.classes</param-name>
-            <param-value>travel.management.web.resource.CountryResource travel.management.web.resource.CityResource</param-value>
-        </init-param>
+        <!-- 使用 jaxrs.serviceClasses 指定 JAX-RS 资源类 -->
         <init-param>
             <param-name>jaxrs.serviceClasses</param-name>
-            <param-value>travel.management.web.resource.CountryResource travel.management.web.resource.CityResource</param-value>
+            <param-value>
+                travel.management.web.resource.CountryResource;
+                travel.management.web.resource.CityResource
+            </param-value>
         </init-param>
+        <!-- 设置 JAX-RS 服务的基本地址 -->
         <init-param>
             <param-name>jaxrs.address</param-name>
             <param-value>/travelApi</param-value>
         </init-param>
     </servlet>
+
     <servlet-mapping>
         <servlet-name>travel.management.web</servlet-name>
-        <url-pattern>/*</url-pattern>
+        <!-- 将 URL 映射到特定的 JAX-RS 服务路径 -->
+        <url-pattern>/travelApi/*</url-pattern>
     </servlet-mapping>
+
 </web-app>
