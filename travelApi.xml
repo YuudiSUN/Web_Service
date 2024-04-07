@@ -1,0 +1,22 @@
+<application xmlns="http://wadl.dev.java.net/2009/02" xmlns:xs="http://www.w3.org/2001/XMLSchema"><grammars><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="unqualified" version="1.0">
+    <xs:element name="city" type="city"/>
+    <xs:element name="country" type="country"/>
+    <xs:complexType name="city">
+        <xs:sequence>
+            <xs:element name="id" type="xs:long"/>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="destinationType" type="xs:string"/>
+            <xs:element name="countryId" type="xs:long"/>
+            <xs:element name="latitude" type="xs:double"/>
+            <xs:element name="longitude" type="xs:double"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="country">
+        <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="cities" nillable="true" type="city"/>
+            <xs:element minOccurs="0" name="id" type="xs:long"/>
+            <xs:element minOccurs="0" name="name" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
+</grammars><resources base="http://localhost:8080/travel.management.web/travelApi"><resource path="/cities"><method name="POST"><request><representation mediaType="application/xml"/></request><response><representation mediaType="application/xml"/></response></method><resource path="/{cityId}"><param name="cityId" style="template" type="xs:long"/><method name="DELETE"><request></request><response><representation mediaType="*/*"/></response></method><method name="PUT"><request><representation mediaType="application/xml"/></request><response><representation mediaType="application/xml"/></response></method></resource><resource path="/{countryId}"><param name="countryId" style="template" type="xs:long"/><method name="GET"><request></request><response><representation mediaType="application/xml"/></response></method></resource></resource><resource path="/countries"><method name="GET"><response><representation mediaType="application/xml"/></response></method><method name="POST"><request><representation mediaType="application/xml"/></request><response><representation mediaType="application/xml"/></response></method><resource path="/{countryId}"><param name="countryId" style="template" type="xs:long"/><method name="DELETE"><request></request><response><representation mediaType="*/*"/></response></method><method name="GET"><request></request><response><representation mediaType="application/xml"/></response></method><method name="PUT"><request><representation mediaType="application/xml"/></request><response><representation mediaType="application/xml"/></response></method></resource></resource></resources></application>
