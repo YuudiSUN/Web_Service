@@ -144,4 +144,5 @@ This package contains service classes responsible for managing city and country 
 - The retrieved list of beach cities contains "Marseille".
 - Weather information for each beach city is successfully displayed.
 
-
+---
+## Note: Don't forget put web.xml !!!!!!
