@@ -6,10 +6,10 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 
 @XmlRootElement
-@XmlAccessorType(XmlAccessType.FIELD) // 表明使用字段直接映射
+@XmlAccessorType(XmlAccessType.FIELD)
 public class City {
 
-    @XmlElement(required = true) // 指示该字段是XML元素的必要字段
+    @XmlElement(required = true)
     private Long id;
 
     @XmlElement(required = true)
@@ -19,7 +19,7 @@ public class City {
     private String destinationType;
 
     @XmlElement(required = true)
-    private Long countryId;
+    private Long countryId;   //to Link with country
 
     @XmlElement(required = true)
     private Double latitude;
@@ -27,9 +27,8 @@ public class City {
     @XmlElement(required = true)
     private Double longitude;
   
-    // 必须有一个无参构造器
     public City() {}
-    
+    //City need his name, destination , longitude and latitude
     public City(String name, String destinationType, Long countryId, double longitude, double latitude) {
         this.name = name;
         this.destinationType = destinationType;
