@@ -131,18 +131,28 @@ This package contains service classes responsible for managing city and country 
 
 ## 4. Demonstration
 
-#### Use Case: Adding Countries and Cities, Querying Cities of Specific Type
+#### Use Case: Managing Countries and Cities and search cities in special Type
 
 **Steps:**
-1. First, the client adds a country named "France".
-2. Then, the client adds a city named "Marseille" with its type set to "Beach", and associates it with the country "France".
-3. Next, the client retrieves a list of all "Beach" cities within the country "France".
-4. Finally, the client displays weather information for each beach city.
 
-**Results:**
-- The country "France" and the city "Marseille" are successfully added to the system.
-- The retrieved list of beach cities contains "Marseille".
-- Weather information for each beach city is successfully displayed.
+1. **Start the Server:** Ensure that the server-side application is up and running, assumed to be on port 8080 of localhost.
+
+2. **Run the Client Program:** Execute the `main` method of the `TravelAgentClient` class.
+
+3. **Choose an Operation:** Upon program execution, you'll be prompted to select an operation:
+   - Type `search` to find existing cities.
+   - Type `add` to add a new city.
+   - Type `exit` to quit the program.
+
+4. **Search for Existing Cities:**
+   - If you select `search`, input the country name followed by the city type. The program will return a list of cities of the specified type within that country.
+
+5. **Add a New City:**
+   - Choosing `add` will guide you through adding a new city. Input the country name, city name, destination type, latitude, and longitude. The program will attempt to add the city to the specified country.
+
+6. **Exit the Program:**
+   - Input `exit` to terminate and exit the program.
+
 
 ---
 ## Note: Don't forget put web.xml !!!!!!
