@@ -1,14 +1,14 @@
 package travel.management.web.data;
 
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.*;
 
+// Declares this class as an XML root element, which allows it to be converted to and from XML
 @XmlRootElement
+// Specifies that the fields of the class are to be automatically bound to XML elements
 @XmlAccessorType(XmlAccessType.FIELD)
 public class City {
 
+    // Marks this field as an XML element, indicating it must be present in the XML document
     @XmlElement(required = true)
     private Long id;
 
@@ -19,16 +19,18 @@ public class City {
     private String destinationType;
 
     @XmlElement(required = true)
-    private Long countryId;   //to Link with country
+    private Long countryId;   // To link with country, indicating which country the city belongs to
 
     @XmlElement(required = true)
     private Double latitude;
 
     @XmlElement(required = true)
     private Double longitude;
-  
+
+    // No-argument constructor required for XML binding
     public City() {}
-    //City need his name, destination , longitude and latitude
+
+    // Constructor to initialize a city with its name, destination type, country ID, longitude, and latitude
     public City(String name, String destinationType, Long countryId, double longitude, double latitude) {
         this.name = name;
         this.destinationType = destinationType;
@@ -37,6 +39,7 @@ public class City {
         this.latitude = latitude;
     }
 
+    // Getter and setter methods for all fields, allowing for retrieval and updating of the city's attributes
     public Long getId() {
         return id;
     }
@@ -72,6 +75,7 @@ public class City {
     public double getLongitude() {
         return longitude;
     }
+
     public void setLongitude(double longitude) {
         this.longitude = longitude;
     }
@@ -84,6 +88,7 @@ public class City {
         this.latitude = latitude;
     }
 
+    // Override the toString method to provide a string representation of the city object
     @Override
     public String toString() {
         return id + "::" + name + "::" + destinationType + "::" + longitude + "::" + latitude;
