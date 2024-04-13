@@ -10,7 +10,7 @@ body {
 *PAN Wenchong* (wenchong.pan@etu.cyu.fr)
 
 ## 1. Introduction
-
+### Don't forget read NOTE
 This project aims to develop a web service using Java Dynamic Web Project for managing country and city information for a travel agency, along with integration with external weather services. It includes functionalities for managing country and city information, querying weather information, and implementing unified access and data modification through a client.
 
 ### 1.1. Web Services:
@@ -155,4 +155,15 @@ This package contains service classes responsible for managing city and country 
 
 
 ---
-## Note: Don't forget put web.xml !!!!!!
+## Note: Don't forget put web.xml !!!!!! SOAP look TP3
+### Server Dynamic Web Project
+1. put all documents 
+2. put web.xml -> run as Tomcat
+3. cityToCountry ->WebServer ->Create WebServer
+4. src/main/wsdl/citytocountry ->Generate Client ->dovol Clinet ->dont forget add pacakage name:management.travel.client
+5. run management.travel.client/cityToCountry_..._Port_Clinet
+
+### Client JAVA Project
+1. put all documents 
+2. **add SERVER** in enviroment
+3.run as JAVA

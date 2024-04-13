@@ -8,7 +8,7 @@ import java.util.Map;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 
-@WebService(targetNamespace = "http://www.com.computer")
+@WebService(targetNamespace = "http://www.travel.management")
 public class CityToCountry {
 
     // 假设这里是您城市到国家代码的映射
