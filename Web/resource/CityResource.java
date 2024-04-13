@@ -45,7 +45,12 @@ public class CityResource {
     // Returns a list of cities for the specified country ID
     return new ArrayList<>(service.getCitiesByCountry(countryId));
   }
-
+  @GET
+  @Produces(MediaType.APPLICATION_XML)
+  public List<City> getAllCities() {
+      // Returns a list of all cities
+      return new ArrayList<>(service.getAllCities());
+  }
   // Handles PUT requests to update an existing city by ID. Consumes and produces XML.
   @PUT
   @Path("/{cityId}")
