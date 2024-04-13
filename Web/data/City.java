@@ -27,10 +27,10 @@ public class City {
     @XmlElement(required = true)
     private Double longitude;
 
-    // No-argument constructor required for XML binding
+ //must need empty
     public City() {}
 
-    // Constructor to initialize a city with its name, destination type, country ID, longitude, and latitude
+ //City need his name, destination , longitude and latitude
     public City(String name, String destinationType, Long countryId, double longitude, double latitude) {
         this.name = name;
         this.destinationType = destinationType;
@@ -39,7 +39,6 @@ public class City {
         this.latitude = latitude;
     }
 
-    // Getter and setter methods for all fields, allowing for retrieval and updating of the city's attributes
     public Long getId() {
         return id;
     }
@@ -88,7 +87,6 @@ public class City {
         this.latitude = latitude;
     }
 
-    // Override the toString method to provide a string representation of the city object
     @Override
     public String toString() {
         return id + "::" + name + "::" + destinationType + "::" + longitude + "::" + latitude;
