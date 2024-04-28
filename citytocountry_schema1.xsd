@@ -1,0 +1,36 @@
+<xs:schema xmlns:tns="http://www.travel.management" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.travel.management" version="1.0">
+
+  <xs:element name="addCityCountryMapping" type="tns:addCityCountryMapping"/>
+
+  <xs:element name="addCityCountryMappingResponse" type="tns:addCityCountryMappingResponse"/>
+
+  <xs:element name="getCountryCodeByCityName" type="tns:getCountryCodeByCityName"/>
+
+  <xs:element name="getCountryCodeByCityNameResponse" type="tns:getCountryCodeByCityNameResponse"/>
+
+  <xs:complexType name="getCountryCodeByCityName">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cityName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getCountryCodeByCityNameResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="addCityCountryMapping">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cityName" type="xs:string"/>
+      <xs:element minOccurs="0" name="countryCode" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="addCityCountryMappingResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>
